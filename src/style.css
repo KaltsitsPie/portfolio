@@ -145,7 +145,7 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: rgba(236, 155, 10, 0.3) !important;
+    background-color: #798777 !important;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
