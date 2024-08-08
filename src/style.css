@@ -145,7 +145,7 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #798777 !important;
+    background-color: rgba(121,135,119,0.5) !important; /* mobile screen navbar background color */
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
@@ -643,7 +643,19 @@ button:focus {
 }
 
 .markdown-container img {
-  max-width: 100%;
+  max-width: 70%;
+  display: block !important;
+}
+
+.markdown-container a {
+  color: #a8edaf;
+}
+
+@media (max-width: 767px) {
+  .markdown-container img {
+    max-width: 100%;
+    display: block !important;
+  }
 }
 
 .markdown-content {

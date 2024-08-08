@@ -7,7 +7,7 @@ const MarkdownRenderer = ({ markdown }) => {
   useEffect(() => {
     const md = new Remarkable();
     setHtmlContent(md.render(markdown));
-    console.log("markdown renderer 获得html content:", htmlContent);
+    // console.log("markdown renderer 获得html content:", htmlContent);
   }, [markdown]);
 
   return <div className='markdown-container p-3' dangerouslySetInnerHTML={{ __html: htmlContent }} />;

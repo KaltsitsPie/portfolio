@@ -55,31 +55,31 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                {/* <AiOutlineHome style={{ marginBottom: "2px" }} /> */}
+                <AiOutlineHome style={{ marginBottom: "4px" }} />
                  Home
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                {/* <AiOutlineUser style={{ marginBottom: "2px" }} />  */}
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> 
                 About Me
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/project"
+                to="/projects"
                 onClick={() => updateExpanded(false)}
               >
-                {/* <AiOutlineFundProjectionScreen
+                <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
-                />{" "} */}
+                />{" "}
                 Projects
               </Nav.Link>
             </Nav.Item>
@@ -90,14 +90,14 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                {/* <CgFileDocument style={{ marginBottom: "2px" }} />  */}
+                <CgFileDocument style={{ marginBottom: "2px" }} /> 
                 Resume
               </Nav.Link>
             </Nav.Item>
 
             {/* <Nav.Item>
               <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
+                href="/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -108,7 +108,7 @@ function NavBar() {
 
             {/* <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/soumyajit4419/Portfolio"
+                href="https://github.com/KaltsitsPie"
                 target="_blank"
                 className="fork-btn-inner"
               >

@@ -12,7 +12,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
-function Home2() {
+function Education() {
   return (
     <Container fluid className="home-about-section" id="about">
       <section className="page-section">
@@ -157,4 +157,4 @@ function Home2() {
     </Container>
   );
 }
-export default Home2;
+export default Education;

@@ -7,7 +7,7 @@ import "./About.css";
 // import ReactMarkdown from 'react-markdown';
 import MarkdownRenderer from "./MarkdownRenderer";
 
-function About() {
+function Projects() {
   const [expanded, setExpanded] = useState(false);
   const markdownFiles = useRef([]);
   const [selectedFileName, setSelectedFileName] = useState("");
@@ -105,4 +105,4 @@ function About() {
   );
 }
 
-export default About;
+export default Projects;
