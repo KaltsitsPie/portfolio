@@ -10,9 +10,8 @@ import MarkdownRenderer from "./MarkdownRenderer";
 function Projects() {
   const [expanded, setExpanded] = useState(false);
   const markdownFiles = useRef([]);
-  const [selectedFileName, setSelectedFileName] = useState("");
   // 被选择的markdown 内容
-  const [selectedMarkdown, setSelectedMarkdown] = useState("");
+  const [selectedMarkdown, setSelectedMarkdown] = useState("# Loading...");
   // 被选择的markdown url
   const [selectedFileUrl, setSelectedFileUrl ] = useState("");
   const [fileIsLoaded, setFileIsLoaded] = useState(false);
@@ -28,22 +27,25 @@ function Projects() {
   };
 
   useEffect(() => {
-    console.log("--开始fetch files");
-    apiGetFiles().then((data) => {
-      console.log("api get files: ", data);
-      if (data !== undefined && data.length > 0) {
-        markdownFiles.current = data;
-        setSelectedFileUrl(data[0].url);
-        setFileIsLoaded(true);
-        console.log("markdown files: ", markdownFiles.current);
-      }
-      
+    apiGetFiles()
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          markdownFiles.current = data.reverse();
+          setSelectedFileUrl(data[0].url);
+          setFileIsLoaded(true);
+        } else {
+          markdownFiles.current = [];
+          setSelectedMarkdown('# Projects is null :-D ')
+        }
+    }).catch((error) => {
+      markdownFiles.current = [];
+      setSelectedMarkdown('# Network error, please try again Later:( ')
+      console.error("Failed to fetch files", error);
     });
   }, []);
 
   useEffect(() => {
     apiLoadMarkdown(selectedFileUrl).then((data) => {
-      console.log("获得了markdown文件", data);
       setSelectedMarkdown(data);
     });
   }, [selectedFileUrl]);
@@ -67,7 +69,7 @@ function Projects() {
                 <span></span>
               </Navbar.Toggle>
               <Navbar.Collapse id="responsive-navbar-nav">
-              {fileIsLoaded && (
+              {fileIsLoaded && Array.isArray(markdownFiles.current) && (
               <Nav variant="underline" className="flex-column ">
               {/* ...所有选项... */}
               {markdownFiles.current.map((file, index) => (

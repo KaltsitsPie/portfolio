@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import Projects from "./components/Project/Projects.js";
 import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
+// import Resume from "./components/Resume/ResumeNew";
+import Resume from "./components/Resume/Resume";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
