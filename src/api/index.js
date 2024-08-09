@@ -15,7 +15,7 @@ export async function apiGetFiles() {
         return data;
     } catch (error) {
         console.error("Failed to apiGetFiles", error);
-        return "# Loading...";
+        return "# Network error, please try again Later:( ";
       }
 }
 
@@ -26,6 +26,6 @@ export async function apiLoadMarkdown(url) {
     return response.data;
   } catch (error) {
     console.error("Failed to apiLoadMarkdown", error);
-    return "# Loading...";
+    return "# Loading... ";
   }
 }
